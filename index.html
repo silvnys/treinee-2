@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Minimalista</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Logo fade-in animation */
+    .logo {
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Slide-in animation for body text */
+    .text-section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .text-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Gradual appearance for gallery images */
+    .gallery-item {
+      opacity: 0;
+      transition: opacity 0.8s ease-in;
+    }
+    .gallery-item.visible {
+      opacity: 1;
+    }
+
+    /* Hamburger menu styles */
+    .menu {
+      display: none;
+    }
+    .menu.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-white font-sans text-gray-800">
+  <!-- Header -->
+  <header class="py-4 fixed top-0 w-full bg-white shadow-sm z-10">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <img src="https://via.placeholder.com/100x50" alt="Logo" class="logo h-12">
+        <h1 class="text-2xl font-light ml-4">Site Minimalista</h1>
+      </div>
+      <button id="menu-toggle" class="text-3xl md:hidden">☰</button>
+      <nav id="menu" class="menu hidden md:block">
+        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 mt-4 md:mt-0">
+          <li><a href="#corpo" class="hover:text-gray-600">Corpo</a></li>
+          <li><a href="#galeria" class="hover:text-gray-600">Galeria</a></li>
+          <li><a href="#contato" class="hover:text-gray-600">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Body -->
+  <main id="corpo" class="container mx-auto px-4 pt-24 pb-12">
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-section">
+        <img src="https://via.placeholder.com/300x200" alt="Imagem 1" class="w-full h-48 object-cover mb-4">
+        <h2 class="text-xl font-light mb-2">Seção 1</h2>
+        <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="text-section">
+        <img src="https://via.placeholder.com/300x200" alt="Imagem 2" class="w-full h-48 object-cover mb-4">
+        <h2 class="text-xl font-light mb-2">Seção 2</h2>
+        <p class="text-gray-600">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="text-section">
+        <img src="https://via.placeholder.com/300x200" alt="Imagem 3" class="w-full h-48 object-cover mb-4">
+        <h2 class="text-xl font-light mb-2">Seção 3</h2>
+        <p class="text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Gallery -->
+  <section id="galeria" class="container mx-auto px-4 py-12">
+    <h2 class="text-2xl font-light mb-6 text-center">Galeria</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <img src="https://via.placeholder.com/150" alt="Foto 1" class="gallery-item w-full h-40 object-cover">
+      <img src="https://via.placeholder.com/150" alt="Foto 2" class="gallery-item w-full h-40 object-cover">
+      <img src="https://via.placeholder.com/150" alt="Foto 3" class="gallery-item w-full h-40 object-cover">
+      <img src="https://via.placeholder.com/150" alt="Foto 4" class="gallery-item w-full h-40 object-cover">
+      <img src="https://via.placeholder.com/150" alt="Foto 5" class="gallery-item w-full h-40 object-cover">
+      <img src="https://via.placeholder.com/150" alt="Foto 6" class="gallery-item w-full h-40 object-cover">
+      <img src="https://via.placeholder.com/150" alt="Foto 7" class="gallery-item w-full h-40 object-cover">
+      <img src="https://via.placeholder.com/150" alt="Foto 8" class="gallery-item w-full h-40 object-cover">
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contato" class="container mx-auto px-4 py-12 bg-gray-50">
+    <h2 class="text-2xl font-light mb-6 text-center">Contato</h2>
+    <div class="max-w-md mx-auto">
+      <p class="text-gray-600 mb-4">Entre em contato pelo número: <a href="tel:+5585994057784" class="text-blue-600">+55 85 99405-7784</a></p>
+      <form>
+        <input type="text" placeholder="Seu nome" class="w-full p-2 mb-4 border border-gray-300 rounded">
+        <textarea placeholder="Sua mensagem" class="w-full p-2 mb-4 border border-gray-300 rounded" rows="4"></textarea>
+        <button type="submit" class="w-full p-2 bg-gray-800 text-white rounded hover:bg-gray-700">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-white border-t border-gray-200">
+    <div class="container mx-auto px-4 text-center text-gray-600">
+      <p>Allanys Silvestre</p>
+      <p>IAPE - Instituto Adventista Pernambucano de Ensino</p>
+      <p>BR 232 KM 91, CEP 55.695-000, Saíra, PE</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.text-section').forEach(section => {
+      observer.observe(section);
+    });
+
+    document.querySelectorAll('.gallery-item').forEach((item, index) => {
+      setTimeout(() => {
+        observer.observe(item);
+      }, index * 200); // Gradual delay for gallery images
+    });
+  </script>
+</body>
+</html>b
